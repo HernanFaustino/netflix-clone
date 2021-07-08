@@ -3,19 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { loadStripe } from '@stripe/stripe-js';
 
-import { selectUser } from '../features/userSlice';
-import db from '../firebase';
+import { selectUser } from '../../features/userSlice';
+import db from '../../firebase';
 
-import './Plans.css';
+import './styles.css';
 
 function Plans() {
   const [products, setProducts] = useState([]);
   const [subscription, setSubscription] = useState(null);
 
   const user = useSelector(selectUser);
-
+  
   const loadCheckout = async (priceId) => {
-    console.log('checking pay');
     const docRef = await db
       .collection('customers')
       .doc(user.uuid)
@@ -35,7 +34,7 @@ function Plans() {
 
       if (sessionId) {
         const stripe = await loadStripe(
-          'pk_test_51J8ZX4JNoAcTfjtYpNHKjdrEJAwOJmwscd0LcwD2KxqV2VbVDp73MtF3t0S5CupmvnqLVHDUqwELklMN1f77qhlY00NJCsQuTb'
+          process.env.REACT_APP_STRIPE_PUBLISH_KEY
         );
         stripe.redirectToCheckout({ sessionId });
       }

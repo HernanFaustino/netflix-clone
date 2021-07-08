@@ -2,12 +2,12 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { selectUser } from '../features/userSlice';
-import { auth } from '../firebase';
-import Nav from '../components/Nav';
-import Plans from './Plans';
+import { selectUser } from '../../features/userSlice';
+import { auth } from '../../firebase';
+import Nav from '../../components/Nav';
+import Plans from '../../components/Plans';
 
-import './ProfileScreen.css';
+import './styles.css';
 
 function ProfileScreen() {
   const user = useSelector(selectUser);

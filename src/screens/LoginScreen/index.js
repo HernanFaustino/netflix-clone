@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import SignUpScreen from './SignUpScreen';
+import SignUpScreen from '../../components/SignupForm';
 
-import './LoginScreen.css';
+import './styles.css';
 
 
 function LoginScreen() {
