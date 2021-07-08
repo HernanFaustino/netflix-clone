@@ -1,21 +1,22 @@
-import React from 'react'
-import Banner from './Banner';
+import React from 'react';
+
+import Banner from '../components/Banner';
+import Nav from '../components/Nav';
+import requests from '../utils/Requests';
+import Row from '../components/Row';
+
 import './HomeScreen.css';
-import Nav from './Nav';
-import requests from './Requests';
-import Row from './Row';
 
 function HomeScreen() {
   return (
-    <div className='homeScreen'>
-      {/* Nav */}
-       <Nav />
-       
-      {/* Banner */}
+    <div className="homeScreen">
+      <Nav />
       <Banner />
-      {/* row */}
-
-      <Row title="Netflix Originals" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
+      <Row
+        title="Netflix Originals"
+        fetchUrl={requests.fetchNetflixOriginals}
+        isLargeRow
+      />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
@@ -24,7 +25,7 @@ function HomeScreen() {
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     </div>
-  )
+  );
 }
 
-export default HomeScreen
+export default HomeScreen;
