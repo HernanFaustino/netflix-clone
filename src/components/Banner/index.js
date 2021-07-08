@@ -6,14 +6,22 @@ import requests from '../../utils/Requests';
 import './styles.css';
 
 function Banner() {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       const request = await axios.get(requests.fetchNetflixOriginals);
+      const initialIndex = Math.floor(
+        Math.random() * request.data.results.length - 1
+      );
+      const movieWithDataIndex = request.data.results.findIndex(
+        (movie, index) => {
+          return movie.backdrop_path && index >= initialIndex;
+        }
+      );
       setMovie(
         request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
+          movieWithDataIndex !== -1 ? movieWithDataIndex : initialIndex
         ]
       );
 
