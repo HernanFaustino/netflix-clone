@@ -47,18 +47,18 @@ https://netflix-clone-490c4.web.app
 ## Screenshots
 * Home
 
-<img src="./screenshots/landing.png" width="350" >
+<img src="./screenshots/landing.png" width="720" >
 
 * Login
 
-<img src="./screenshots/login.png" width="350">
+<img src="./screenshots/login.png" width="720">
 
 * Home 
 
-<img src="./screenshots/home.png" width="350">
+<img src="./screenshots/home.png" width="720">
 
 * Home
 
 
-<img src="./screenshots/home-2.png" width="350">
+<img src="./screenshots/home-2.png" width="720">
 
