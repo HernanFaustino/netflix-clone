@@ -39,7 +39,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Current endpoint
 
-Visit the demo:
+Demo:
 
 https://netflix-clone-490c4.web.app
 
